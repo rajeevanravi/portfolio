@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Rajeevan Ravichandren — Portfolio</title>
+<meta name="description" content="Portfolio / CV of Rajeevan Ravichandren — Web Developer" />
+<link rel="shortcut icon" href="profile.jpg">
+
+<!-- Google Fonts (system-safe fallback included) -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#f4f8ff;
+    --card:#ffffff;
+    --accent:#0b66ff;
+    --muted:#6b7280;
+    --glass: rgba(255,255,255,0.7);
+    --shadow: 0 6px 20px rgba(11,102,255,0.08);
+    --radius:14px;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;background:linear-gradient(180deg,#eef6ff 0%,var(--bg) 60%);color:#0f1724}
+  a{color:var(--accent);text-decoration:none}
+  header{display:flex;justify-content:space-between;align-items:center;padding:22px 28px;max-width:1100px;margin:0 auto}
+  .logo{display:flex;gap:14px;align-items:center}
+  .logo .mark{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#0070f3);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;box-shadow:var(--shadow)}
+  nav a{margin-left:18px;font-weight:600;color:#0b2b4a}
+  .container{max-width:1100px;margin:20px auto;padding:24px}
+  .hero{
+    background:linear-gradient(90deg, rgba(11,102,255,0.08), rgba(11,102,255,0.02));
+    border-radius:var(--radius);
+    padding:28px;
+    display:grid;
+    grid-template-columns:1fr 360px;
+    gap:24px;
+    box-shadow:var(--shadow);
+    align-items:center;
+  }
+
+  /* left hero */
+  .intro h1{margin:0;font-size:32px;letter-spacing:0.4px}
+  .intro h2{margin:8px 0 12px;font-weight:600;color:var(--accent);font-size:18px}
+  .type{color:var(--muted);font-size:15px;margin-bottom:14px}
+  .cta{display:flex;gap:12px;margin-top:12px}
+  .btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;font-weight:700;display:inline-flex;gap:8px;align-items:center}
+  .btn.ghost{background:transparent;color:var(--accent);border:2px solid rgba(11,102,255,0.12);font-weight:700}
+
+  /* right card */
+  .card{
+    background:var(--card);border-radius:12px;padding:18px;box-shadow:0 8px 30px rgba(16,24,40,0.06)
+  }
+  .profile{
+    display:flex;gap:14px;align-items:center
+  }
+  .avatar{
+    width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,#e6f0ff,#dcefff);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--accent);font-size:28px
+  }
+  .meta small{display:block;color:var(--muted);font-size:13px}
+  .contact{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+  .chip{background:linear-gradient(180deg,#f8fbff,#f2f7ff);padding:8px 10px;border-radius:999px;font-weight:600;font-size:13px;border:1px solid rgba(11,102,255,0.06)}
+
+  /* sections */
+  section{margin-top:20px;background:transparent}
+  .grid-2{display:grid;grid-template-columns:1fr 360px;gap:20px}
+  .card-lg{background:var(--card);border-radius:12px;padding:18px;box-shadow:var(--shadow);}
+
+  h3{margin:0 0 12px;font-size:16px;color:#0b2340}
+  p.lead{color:var(--muted);margin:0 0 12px;line-height:1.5}
+
+  /* skills */
+  .skills{display:flex;flex-direction:column;gap:8px}
+  .skill{display:flex;justify-content:space-between;align-items:center}
+  .bar{flex:1;height:10px;background:#e8eefc;border-radius:999px;margin-left:12px;overflow:hidden}
+  .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#00a0ff);border-radius:999px;width:40%}
+
+  /* experience timeline */
+  .timeline{display:flex;flex-direction:column;gap:10px}
+  .exp{padding:12px;border-radius:10px;border:1px dashed rgba(11,102,255,0.06)}
+  .exp h4{margin:0;font-size:14px}
+  .muted{color:var(--muted);font-size:13px}
+
+  /* project card */
+  .project{display:flex;flex-direction:column;gap:10px}
+  .project .thumb{height:140px;border-radius:10px;background:linear-gradient(135deg,#eef6ff,#e8f3ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent)}
+  .project-actions{display:flex;gap:8px}
+
+  /* references */
+  .ref{padding:12px;border-radius:10px;background:linear-gradient(180deg,#ffffff,#fbfdff);border:1px solid rgba(11,102,255,0.04)}
+
+  footer{max-width:1100px;margin:32px auto;text-align:center;color:var(--muted);font-size:14px;padding:12px}
+
+  /* responsiveness */
+  @media (max-width:980px){
+    .hero,.grid-2{grid-template-columns:1fr}
+    nav{display:none}
+    header{padding:18px}
+  }
+
+  /* little animations */
+  .fade-up{opacity:0;transform:translateY(8px);animation:up 700ms forwards}
+  @keyframes up{to{opacity:1;transform:none}}
+  .small{font-size:13px}
+  .download{display:inline-flex;align-items:center;gap:8px}
+  .tag{display:inline-block;padding:6px 8px;border-radius:8px;font-weight:700;background:#f0f6ff;border:1px solid rgba(11,102,255,0.05);font-size:13px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="mark"><img src="profile.jpg" alt="Rajeevan Ravichandren" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+    <div>
+      <div style="font-weight:800">Rajeevan Ravichandren</div>
+      <div style="font-size:13px;color:var(--muted)">Software Engineer · Colombo, Sri Lanka</div>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="hero fade-up">
+    <div class="intro">
+      <h1>Hi — I’m Rajeevan</h1>
+      <h2>Software Engineer</h2>
+      <div class="type" id="typeIntro">Building modern web apps, APIs, and 3D interactive experiences.</div>
+
+      <p class="lead">Motivated developer with 2+ years experience building web applications, REST APIs, and real-time features (WebRTC / Agora). Comfortable across PHP (Laravel), React, JS, Python and cloud platforms. Focused on clean architecture, security best practices, and delivering polished UI/UX.</p>
+
+      <div class="cta">
+        <a class="btn" href="#contact">Contact</a>
+        <a class="btn ghost" href="#projects">See Projects</a>
+      </div>
+
+      <div style="margin-top:16px;font-size:13px;color:var(--muted)">
+        <span class="tag">Open to freelance & employment</span>
+      </div>
+    </div>
+
+    <aside class="card">
+      <div class="profile">
+        <div class="avatar">
+            <img src="profile.jpg" alt="Rajeevan Ravichandren" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+        </div>
+        <div class="meta">
+          <div style="font-weight:800">Rajeevan Ravichandren</div>
+          <small class="muted">Software Engineer</small>
+          <small class="muted">Colombo, Sri Lanka</small>
+        </div>
+      </div>
+
+      <div class="contact" style="margin-top:14px">
+        <div class="chip">📞 +94-755249342</div>
+        <div class="chip">✉️ <a href="mailto:rajeevanmail666@gmail.com">rajeevanmail666@gmail.com</a></div>
+        <div class="chip">🔗 <a href="https://www.linkedin.com/in/rajeevanravichandren" target="_blank">LinkedIn</a></div>
+        <div class="chip">🔗 <a href="https://github.com/rajeevanravi" target="_blank">Github</a></div>
+      </div>
+
+      <div style="margin-top:14px" class="small muted">
+        Resume source: uploaded CV used to build this page. :contentReference[oaicite:1]{index=1}
+      </div>
+
+      <div style="margin-top:16px;display:flex;gap:8px">
+        <a class="btn download" href="#" id="downloadCv">Download CV</a>
+        <a class="btn ghost" href="#projects">View Work</a>
+      </div>
+    </aside>
+  </div>
+
+  <section id="about" class="fade-up">
+    <div class="grid-2">
+      <div class="card-lg">
+        <h3>Profile</h3>
+        <p class="lead">Motivated developer with 2+ years of experience in web applications, focused on technical solutions, problem-solving, collaboration, and continuous learning. Experienced in Laravel, React, Python, and building interactive 3D websites using Three.js and Tailwind CSS. Comfortable integrating SDKs (Agora/WebRTC) for real-time features and deploying to cloud platforms (Google Cloud, Azure).</p>
+
+        <h3 style="margin-top:14px">Core strengths</h3>
+        <ul style="margin:8px 0 0 18px;color:var(--muted)">
+          <li>Full-stack web development (Laravel, React, JS)</li>
+          <li>RESTful APIs, backend integration, SQL & NoSQL</li>
+          <li>Real-time features (WebRTC / Agora)</li>
+          <li>Security best practices: input validation, SQL injection prevention, session handling</li>
+          <li>Deployment & maintenance: Apache/Nginx, hosting, CI workflows</li>
+        </ul>
+      </div>
+
+      <div class="card-lg">
+        <h3>Quick facts</h3>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+          <div><strong>Location:</strong> <br>Colombo, Sri Lanka</div>
+          <div><strong>Email:</strong> <a href="mailto:rajeevanmail666@gmail.com"><br>rajeevanmail666@gmail.com</a></div>
+          <div><strong>Phone:</strong><br> +94-755249342</div>
+          <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rajeevanravichandren" target="_blank"><br>linkedin.com/in/rajeevanravichandren</a></div>
+          <div><strong>Github:</strong> <a href="https://github.com/rajeevanravi" target="_blank"><br>github.com/rajeevanravi</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="fade-up">
+    <h3>Skills</h3>
+    <div class="grid-2" style="align-items:start">
+      <div class="card-lg">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+          <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Bootstrap 5</span><span class="tag">Tailwind</span><span class="tag">React</span><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Node.js</span><span class="tag">Three.js</span><span class="tag">Python core Programming</span>
+        </div>
+
+        <div class="skills">
+          <div class="skill"><div class="small">Frontend (HTML/CSS/JS/React)</div><div class="bar"><i style="width:85%"></i></div></div>
+          <div class="skill"><div class="small">Backend (Laravel, PHP, APIs)</div><div class="bar"><i style="width:80%"></i></div></div>
+          <div class="skill"><div class="small">Realtime (WebRTC / Agora)</div><div class="bar"><i style="width:70%"></i></div></div>
+          <div class="skill"><div class="small">Databases (MySQL, MongoDB)</div><div class="bar"><i style="width:75%"></i></div></div>
+          <div class="skill"><div class="small">Cloud & Deployment</div><div class="bar"><i style="width:64%"></i></div></div>
+          <div class="skill"><div class="small">Python & Data Engineering</div><div class="bar"><i style="width:60%"></i></div></div>
+        </div>
+      </div>
+
+      <div class="card-lg">
+        <h3>Programming Languages & Tools</h3>
+        <p class="small muted">Python · Java · MATLAB · C++ · C# · Git · GitHub/GitLab · VS Code · Postman · Composer · cPanel</p>
+
+        <h3 style="margin-top:12px">Security Practices</h3>
+        <p class="small muted">Input validation, SQL injection prevention, secure session handling and secure deployment patterns.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="fade-up">
+    <h3>Professional experience</h3>
+    <div class="grid-2" style="align-items:start">
+      <div class="card-lg">
+        <div class="timeline">
+          <div class="exp">
+            <h4>Alpha Health Consultancy PVT Ltd — Software Engineer</h4>
+            <div class="muted small">June 2025 – Present</div>
+            <p class="small">Building and maintaining web applications, integrating APIs and implementing secure, maintainable code for health consultancy platforms.</p>
+          </div>
+
+          <div class="exp">
+            <h4>Software Engineer Associate — (3rd party / Software Developer)</h4>
+            <div class="muted small">July 2024 – April 2025</div>
+            <p class="small">Integrated third-party SDKs and APIs, developed backend components and contributed to application architecture and testing.</p>
+          </div>
+
+          <div class="exp">
+            <h4>University of Jaffna — Web Developer</h4>
+            <div class="muted small">March 2023 – Sep 2023</div>
+            <p class="small">Developed web systems and supported academic projects and student-facing sites.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-lg">
+        <h3>References</h3>
+        <div class="ref">
+          <div style="font-weight:700">Dr. K. Thabotharan</div>
+          <div class="muted small">Senior Lecturer Gr.I — thabo@univ.jfn.ac.lk · <br>TP: +94212218194</div>
+        </div>
+
+        <div style="height:10px"></div>
+
+        <div class="ref">
+          <div style="font-weight:700">Dr. T. Kokul</div>
+          <div class="muted small">Senior Lecturer Gr.II — kokul@univ.jfn.ac.lk · <br>TP: +94212218194</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="fade-up">
+    <h3>Selected projects</h3>
+
+    <div class="card-lg project">
+      <div class="thumb"><!-- Computer Society 3D site — React + Three.js -->
+        <img src="image.png" alt="Computer Society 3D site" style="width:100%;height:100%;object-fit:cover;border-radius:10px">
+      </div>
+      <div>
+        <p class="small muted" style="margin:0 0 8px">Developed a dynamic 3D website for the Computer Society of the University of Jaffna using React.js, Three.js, and Tailwind CSS. Interactive 3D elements and modern UI to showcase activities and members.</p>
+        <div class="project-actions">
+          <a class="btn" href="https://society.jfn.ac.lk/compsoc/" target="_blank">Live site</a>
+          <a class="btn ghost" href="https://rnviththagan.github.io/compsoc_src/kananiyam/Kananiyam-2025.pdf" target="_blank">Published article (2025)</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="height:12px"></div>
+
+    <div class="card-lg">
+      <h4>Other work</h4>
+      <p class="small muted" style="margin:6px 0 0">Windows-based data handling tool (Core Python) and RESTful APIs.<br>real-time video call integrations (Agora/WebRTC).<br>Develop own method to integrate CyberSource Visa Solution payment gateway on Laravel.</p>
+    </div>
+  </section>
+
+  <section id="achievements" class="fade-up">
+    <h3>Achievements</h3>
+    <div class="card-lg">
+      <ul style="margin:8px 0 0 18px;color:var(--muted)">
+        <li>Published article “The Importance of Brain-Computer Interfaces” — Kananiyam Magazine (University of Jaffna, 2025).</li>
+        <li>Developed and deployed interactive 3D website for student society (society.jfn.ac.lk).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="fade-up">
+    <h3>Education</h3>
+    <div class="grid-2">
+      <div class="card-lg">
+        <p><strong>B.Sc. in Computer Science</strong><br>
+            <span style="color:#6b7280">University of Jaffna, Jaffna, Sri Lanka</span><br>
+            <small>09/2020 – 10/2023</small>
+        </p>
+
+        <p class="lead">
+            Computer Science academic with a strong foundation in computer hardware and systems.  
+            Proven experience and expertise in programming languages including Java, Python, and C++.  
+            Experienced with the PHP Laravel framework and committed to advancing research and education.  
+        </p>
+
+        <ul style="margin:0 0 0 18px;color:#6b7280">
+            <li>Full-stack development with PHP, JavaScript, Perl, and Laravel.</li>
+            <li>Hands-on experience in Java, Python, and C++ programming.</li>
+            <li>Focused on software engineering research and education.</li>
+        </ul>
+        <p style="margin-top:10px">
+            📖 Our syllabus: <a href="https://www.csc.jfn.ac.lk" target="_blank">www.csc.jfn.ac.lk</a>
+        </p>
+      </div>
+      
+
+      <div class="card-lg">
+        <h4>Contact details</h4>
+        <div style="margin-top:8px" class="small muted">
+          <div><strong>Phone:</strong> +94-755249342</div>
+          <div><strong>Email:</strong> <a href="mailto:rajeevanmail666@gmail.com">rajeevanmail666@gmail.com</a></div>
+          <div style="margin-top:8px"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rajeevanravichandren" target="_blank">linkedin.com/in/rajeevanravichandren</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  
+</footer>
+
+<script>
+  // Simple typewriter for the intro
+  (function(){
+    const phrases = [
+      "Building modern web apps, APIs, and 3D interactive experiences.",
+      "Laravel, React, Three.js, WebRTC — I ship reliable systems.",
+      "Security-aware and deployment-ready (Google Cloud / Azure)."
+    ];
+    let i = 0, pos = 0, forward = true;
+    const el = document.getElementById('typeIntro');
+    function tick(){
+      const txt = phrases[i];
+      if(forward){
+        pos++;
+        el.textContent = txt.slice(0,pos);
+        if(pos===txt.length){ forward=false; setTimeout(tick,1400); return;}
+      } else {
+        pos--;
+        el.textContent = txt.slice(0,pos);
+        if(pos===0){ forward=true; i=(i+1)%phrases.length; setTimeout(tick,400); return;}
+      }
+      setTimeout(tick, 44);
+    }
+    tick();
+  })();
+
+  // download CV: open uploaded file in new tab if available
+  document.getElementById('downloadCv').addEventListener('click', function(e){
+    e.preventDefault();
+    // Attempt to open an uploaded CV. If hosting on a server, replace with a real link.
+    // If you're using this locally and have the PDF in the same folder, change path to "Rajeevan Ravichandren Resume.pdf"
+    const possiblePaths = [
+      'Rajeevan Ravichandren Resume.pdf',
+      '/mnt/data/Rajeevan Ravichandren Resume.pdf',
+      'sandbox:/mnt/data/Rajeevan Ravichandren Resume.pdf'
+    ];
+    // try to open the first path — user may need to update link depending on hosting environment
+    window.open(possiblePaths[0], '_blank');
+  });
+
+  // basic contact form handler (client-side only)
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Thanks — this is a demo contact form. To receive messages, replace the form action with your email / backend endpoint.');
+  });
+
+  // Fade-up animation trigger
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.fade-up').forEach((el,i)=>{
+      setTimeout(()=>el.style.animationDelay='0ms', i*80);
+      el.classList.add('fade-up');
+    });
+  });
+</script>
+</body>
+</html>
